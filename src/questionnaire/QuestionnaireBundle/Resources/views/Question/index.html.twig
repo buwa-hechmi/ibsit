@@ -1,0 +1,64 @@
+{% include 'questionnaireQuestionnaireBundle:Layout:base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+ <div class="raw">
+  <div class="col-md-8" style="color:#eb9316"> 
+    <h1>Liste des questions</h1>
+  </div>
+  <div class="col-md-4 text-right" style="margin-top:10px;"> 
+    
+            <a class="btn btn-lg btn-warning" href="{{ path('question_new') }}">
+                Ajouter votre Question
+            </a>
+
+   </div>
+  </div>
+  <div class="raw">
+   <div class="col-md-12">        
+    <table class=" table table-responsive">
+        <thead >
+            <tr class="danger">
+               
+                <th >Questiont</th>
+                
+                <th>Attachement</th>
+                <th>Responsetype</th>
+                
+                 <th >Questionnaire name</th>
+                <th width="150">Choisir actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr class="info">
+                
+               <td>{{ entity.questiontext }}</td>
+                
+                <td>{{ entity.attachement }}</td>
+                <td>{{ entity.responsetype }}</td>
+                
+                <td>{{ entity.questionnaire.name }}</td>
+                <td >
+                <ul class=" list-inline">
+                    
+                    <li>
+                        <a class="btn btn-success" href="{{ path('question_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a class="btn btn-primary" href="{{ path('question_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  
+       
+   </div>
+ </div>
+ </div>
+    {% endblock %}

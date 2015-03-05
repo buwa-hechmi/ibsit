@@ -1,0 +1,39 @@
+{% include 'questionnaireQuestionnaireBundle:Layout:base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+ <div class="raw">
+  <div class="col-md-10" style="color:#c12e2a"> 
+    <h1><span class="label label-primary">{{ entity.content }}</span></h1>
+  </div>
+  <div class="col-md-2 text-right" style="margin-top:30px"> 
+      <a class="btn btn-warning" href="{{ path('response') }}">
+            Retour a la liste
+        </a>
+  </div>
+  
+  
+         
+ </div>     
+ <div class="raw">
+  <div class="col-md-12" >
+  
+    <table class="record_properties table table-responsive">
+        <tbody>
+            <tr class="success" >
+                <th>Question</th>
+                <td>{{ entity.question }}</td>
+            </tr>
+            <tr >
+                <th>Réponse</th>
+                <td>{{ entity.content }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+   
+</div>
+</div>
+</div>
+{% endblock %}

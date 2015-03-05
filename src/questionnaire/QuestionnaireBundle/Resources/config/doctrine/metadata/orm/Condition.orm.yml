@@ -1,0 +1,21 @@
+Condition:
+    type: entity
+    table: condition
+    id:
+        conditionid:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: ConditionId
+            generator:
+                strategy: IDENTITY
+    fields:
+        desc:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

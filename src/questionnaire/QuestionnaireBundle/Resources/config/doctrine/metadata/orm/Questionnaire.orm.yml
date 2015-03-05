@@ -1,0 +1,78 @@
+Questionnaire:
+    type: entity
+    table: questionnaire
+    indexes:
+        IDX_B4D8065A82F1BAF4:
+            columns:
+                - language_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        description:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        welcomemessage:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: welcomeMessage
+        attachement:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        isgenerated:
+            type: boolean
+            nullable: false
+            comment: ''
+            column: isGenerated
+        type:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            comment: ''
+        confirmationsms:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: confirmationSms
+        finalmessage:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: finalMessage
+        name:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+    manyToOne:
+        language:
+            targetEntity: Language
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                language_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

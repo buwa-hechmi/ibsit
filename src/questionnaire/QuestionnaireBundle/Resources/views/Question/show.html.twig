@@ -1,0 +1,62 @@
+{% include 'questionnaireQuestionnaireBundle:Layout:base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+ <div class="raw">
+  <div class="col-md-8" style="color:#2aabd2"> 
+    <h2>{{ entity.questionnaire.name  }}<span class="label label-success">{{  entity.questiontext }}</span></h2>
+  </div>
+  <div class="col-md-2 text-right" style="margin-top:20px"> 
+      <a class="btn btn-warning" href="{{ path('question') }}">
+            Retour a la liste
+        </a>
+  </div>
+  <div class="col-md-1 text-right" style="margin-top:20px"> 
+      <a class="btn btn-info" href="{{ path('question_edit', { 'id': entity.id }) }}">
+            Modifier
+        </a>
+  </div>
+  <div class="col-md-1 text-right" style="margin-top:20px"> 
+      {{ form(delete_form) }}
+  </div>
+         
+ </div>     
+ <div class="raw">
+  <div class="col-md-12" >
+  
+    <table class="record_properties table table-responsive">
+        <tbody>
+            <tr class="success" >
+                <th>Question</th>
+                <td>{{ entity.questiontext }}</td>
+            </tr>
+            <tr >
+                 <th>Questiontexten</th>
+                <td>{{ entity.questiontexten }}</td>
+            </tr>
+            <tr class="info">
+                <th>Attachement</th>
+                <td>{{ entity.attachement }}</td>
+            </tr>
+            <tr>
+                <th>Responsetype</th>
+                <td>{{ entity.responsetype }}</td>
+            </tr>
+            <tr class="warning">
+                <th>Position</th>
+                <td>{{ entity.position }}</td>
+            </tr>
+            <tr>
+                <th>Mode</th>
+                <td>{{ entity.mode }}</td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+
+   
+</div>
+</div>
+</div>
+{% endblock %}

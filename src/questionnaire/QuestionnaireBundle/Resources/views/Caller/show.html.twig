@@ -1,0 +1,55 @@
+{% include 'questionnaireQuestionnaireBundle:Layout:base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+ <div class="raw">
+  <div class="col-md-8" style="color:#2aabd2"> 
+    <h2><span class="label label-success">{{ entity.name }}</span></h2>
+  </div>
+  <div class="col-md-2 text-right" style="margin-top:20px"> 
+      <a class="btn btn-warning" href="{{ path('caller') }}">
+            Retour a la liste
+        </a>
+  </div>
+  <div class="col-md-1 text-right" style="margin-top:20px"> 
+      <a class="btn btn-info" href="{{ path('caller_edit', { 'id': entity.id }) }}">
+            Modifier
+        </a>
+  </div>
+  <div class="col-md-1 text-right" style="margin-top:20px"> 
+      {{ form(delete_form) }}
+  </div>
+         
+ </div>     
+ <div class="raw">
+  <div class="col-md-12" >
+  
+    <table class="record_properties table table-responsive">
+        <tbody>
+            
+            <tr >
+                 <th>Adress</th>
+                <td>{{ entity.adress }}</td>
+            </tr>
+            <tr class="info">
+                <th>Phone</th>
+                <td>{{ entity.phone }}</td>
+            </tr>
+            <tr>
+                 <th>Mail</th>
+                <td>{{ entity.mail }}</td>
+            </tr>
+           
+        </tbody>
+    </table>   
+   </div>
+  </div>
+  <div class="raw text-center">
+     <div class="col-md-12" >
+          <a class="btn btn-primary" href="{{ path('response_new') }}">
+            Particper a notre questionnaire
+        </a>
+     </div>
+  </div>
+</div>
+{% endblock %}

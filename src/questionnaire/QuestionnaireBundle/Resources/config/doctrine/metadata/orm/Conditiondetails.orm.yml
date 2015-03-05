@@ -1,0 +1,59 @@
+Conditiondetails:
+    type: entity
+    table: conditiondetails
+    indexes:
+        FK_01:
+            columns:
+                - cid
+        FK_03:
+            columns:
+                - toQuest
+        IDX_1C8BEE655492AEDA:
+            columns:
+                - qid
+    id: {  }
+    fields:
+        valmin:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: valMin
+        valmax:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: valMax
+    oneToOne:
+        cid:
+            targetEntity: Condition
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cid:
+                    referencedColumnName: ConditionId
+            orphanRemoval: false
+        qid:
+            targetEntity: Question
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                qid:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToOne:
+        toquest:
+            targetEntity: Question
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                toQuest:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

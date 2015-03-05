@@ -1,0 +1,21 @@
+questionnaire_questionnaire:
+    resource: "@questionnaireQuestionnaireBundle/Resources/config/routing.yml"
+    prefix:   /
+questionnaireQuestionnaireBundle_questionnaire:
+        resource: "@questionnaireQuestionnaireBundle/Resources/config/routing/questionnaire.yml"
+        prefix:   /questionnaire
+
+questionnaireQuestionnaireBundle_question:
+        resource: "@questionnaireQuestionnaireBundle/Resources/config/routing/question.yml"
+        prefix:   /question
+        
+questionnaireQuestionnaireBundle_response:
+        resource: "@questionnaireQuestionnaireBundle/Resources/config/routing/response.yml"
+        prefix:   /response
+        
+questionnaireQuestionnaireBundle_caller:
+        resource: "@questionnaireQuestionnaireBundle/Resources/config/routing/caller.yml"
+        prefix:   /caller
+questionnaireQuestionnaireBundle_call:
+        resource: "@questionnaireQuestionnaireBundle/Resources/config/routing/call.yml"
+        prefix:   /call

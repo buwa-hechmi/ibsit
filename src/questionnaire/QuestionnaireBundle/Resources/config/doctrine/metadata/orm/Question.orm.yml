@@ -1,0 +1,62 @@
+Question:
+    type: entity
+    table: question
+    indexes:
+        IDX_4F812B18CE07E8FF:
+            columns:
+                - questionnaire_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        questiontext:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            column: questionText
+        questiontexten:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            column: questionTextEn
+        attachement:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        responsetype:
+            type: boolean
+            nullable: true
+            comment: ''
+            column: responseType
+        position:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        mode:
+            type: boolean
+            nullable: true
+            comment: ''
+    manyToOne:
+        questionnaire:
+            targetEntity: Questionnaire
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                questionnaire_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,67 @@
+Call:
+    type: entity
+    table: call
+    indexes:
+        IDX_9439497EA5626C52:
+            columns:
+                - caller_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        calldate:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: callDate
+        assignementdate:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: assignementDate
+        duration:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        status:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        callnumber:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: callNumber
+        rate:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        comment:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+    manyToOne:
+        caller:
+            targetEntity: Caller
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                caller_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

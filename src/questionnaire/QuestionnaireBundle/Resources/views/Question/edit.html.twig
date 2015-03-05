@@ -1,0 +1,25 @@
+{% include 'questionnaireQuestionnaireBundle:Layout:base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+ <div class="raw">
+  <div class="col-md-9" style="color:#c12e2a">
+    <h1>Question edit</h1>
+  </div>
+  <div class="col-md-2 text-right" style="margin-top:30px"> 
+      <a class="btn btn-warning" href="{{ path('question') }}">
+            Retour a la liste
+        </a>
+  </div>
+  <div class="col-md-1 text-right" style="margin-top:30px"> 
+      {{ form(delete_form) }}
+  </div>
+ </div>
+  <div class="raw">
+   <div class="col-md-12" >        
+    {{ form(edit_form) }}
+   </div>
+</div> 
+</div>
+
+{% endblock %}

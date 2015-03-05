@@ -1,0 +1,52 @@
+Response:
+    type: entity
+    table: response
+    indexes:
+        IDX_C70D69AD50A89B2C:
+            columns:
+                - call_id
+        IDX_C70D69AD1E27F6BF:
+            columns:
+                - question_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        content:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        attachement:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+    manyToOne:
+        question:
+            targetEntity: Question
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                question_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        call:
+            targetEntity: Call
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                call_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

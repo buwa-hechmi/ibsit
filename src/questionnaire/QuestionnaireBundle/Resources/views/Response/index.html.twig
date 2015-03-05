@@ -1,0 +1,54 @@
+{% include 'questionnaireQuestionnaireBundle:Layout:base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+ <div class="raw">
+  <div class="col-md-8" style="color:#eb9316"> 
+    <h1>Messages</h1>
+  </div>
+ 
+  </div>
+  <div class="raw">
+   <div class="col-md-12">        
+    <table class=" table table-responsive">
+        <thead >
+            <tr class="danger">
+               <th>Question</th>
+               <th>Caller</th>
+                <th>call</th>
+               <th>Reponse</th>
+                <th>Attachement</th>
+                <th width="150">Choisir actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr class="info">
+                <th>{{ entity.question }}</th>
+                <th>{{ entity.call.caller }}</th>
+                <th>{{ entity.call.id }}</th>
+                <td>{{ entity.content }}</td>
+                <td>{{ entity.attachement }}</td>
+                <td >
+                <ul class=" list-inline">
+                    
+                    <li>
+                        <a class="btn btn-primary" href="{{ path('response_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a class="btn btn-primary" href="{{ path('response_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  
+       
+   </div>
+ </div>
+ </div>
+    {% endblock %}

@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Call list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Calldate</th>
+                <th>Assignementdate</th>
+                <th>Duration</th>
+                <th>Status</th>
+                <th>Callnumber</th>
+                <th>Rate</th>
+                <th>Comment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('call_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{% if entity.calldate %}{{ entity.calldate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.assignementdate %}{{ entity.assignementdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.duration }}</td>
+                <td>{{ entity.status }}</td>
+                <td>{{ entity.callnumber }}</td>
+                <td>{{ entity.rate }}</td>
+                <td>{{ entity.comment }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('call_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('call_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('call_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,23 @@
+{% include 'questionnaireQuestionnaireBundle:Layout:base.html.twig' %}
+{% block body -%}
+<div class="container">
+ <div class="raw">
+  <div class="col-md-8" style="color:#c12e2a">
+    <h1>Répondre a notre questionnaire</h1>
+  </div>
+  <div class="col-md-4 text-right" style="margin-top:35px"> 
+      <a class="btn btn-success" href="{{ path('response') }}">
+            Retour a la liste
+        </a>
+  </div>
+  </div>
+  <div class="raw">
+   <div class="col-md-12" >     
+    {{ form(form) }}
+
+       
+</div>
+</div>
+</div>
+
+{% endblock %}

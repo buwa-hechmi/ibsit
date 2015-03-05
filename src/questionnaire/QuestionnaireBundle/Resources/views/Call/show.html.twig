@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Call</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Calldate</th>
+                <td>{{ entity.calldate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Assignementdate</th>
+                <td>{{ entity.assignementdate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ entity.duration }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+            <tr>
+                <th>Callnumber</th>
+                <td>{{ entity.callnumber }}</td>
+            </tr>
+            <tr>
+                <th>Rate</th>
+                <td>{{ entity.rate }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ entity.comment }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('call') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('call_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

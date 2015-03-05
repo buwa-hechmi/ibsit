@@ -1,0 +1,3 @@
+questionnaire_questionnaire_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: questionnaireQuestionnaireBundle:Default:index }

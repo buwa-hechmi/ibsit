@@ -1,0 +1,30 @@
+response:
+    pattern:  /
+    defaults: { _controller: "questionnaireQuestionnaireBundle:Response:index" }
+
+response_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "questionnaireQuestionnaireBundle:Response:show" }
+
+response_new:
+    pattern:  /new
+    defaults: { _controller: "questionnaireQuestionnaireBundle:Response:new" }
+
+response_create:
+    pattern:  /create
+    defaults: { _controller: "questionnaireQuestionnaireBundle:Response:create" }
+    requirements: { _method: post }
+
+response_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "questionnaireQuestionnaireBundle:Response:edit" }
+
+response_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "questionnaireQuestionnaireBundle:Response:update" }
+    requirements: { _method: post|put }
+
+response_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "questionnaireQuestionnaireBundle:Response:delete" }
+    requirements: { _method: post|delete }
